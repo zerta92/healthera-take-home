@@ -1,0 +1,25 @@
+version: '2'
+services:
+  sqs:
+    image: localstack/localstack
+    platform: linux/amd64
+    ports:
+      - '4563-4599:4563-4599'
+      - '8055:8080'
+    environment:
+      - SERVICES=sqs
+      - DATA_DIR=/var/lib/localstack/data
+    volumes:
+      - 'sqs:/var/lib/localstack'
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+volumes:
+  sqs: null

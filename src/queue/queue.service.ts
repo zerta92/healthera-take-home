@@ -10,8 +10,7 @@ import * as amqp from 'amqplib';
 
 @Injectable()
 export class QueueService {
-  private connection: amqp.Connection | null = null;
-  private isSubscribed: boolean = false; // Flag to track subscription
+  private isSubscribed: boolean = false;
   constructor(@Inject('QUEUE_PROVIDER') private readonly queueProvider: any) {}
 
   async publishMessage(message: string): Promise<void> {

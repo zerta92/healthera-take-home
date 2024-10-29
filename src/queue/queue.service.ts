@@ -6,7 +6,6 @@ import {
   ReceiveMessageCommand,
   DeleteMessageCommand,
 } from '@aws-sdk/client-sqs';
-import * as amqp from 'amqplib';
 
 @Injectable()
 export class QueueService {

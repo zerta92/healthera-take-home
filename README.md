@@ -54,5 +54,5 @@ Go to `http://localhost:15672/#/`
   - How can I use both queues at once?
      - This would likely include handling a new value of the environment variable QUEUE_PROVIDER=BOTH which would instantiate both queues. To use both of them the, /publish handler would randomly send the message to either of the queues and the /subscribe handler would need to subcribe to both queues, then the app should handle the messages as they come through.
   - How can I write the app to test it and have queues ready?
-     - Use in-memory or mock versions of SQS and RabbitMQ during development and unit testing. This setup allows you to test message flow and handling without needing external dependencies.
+     - Use in-memory or mock versions of SQS and RabbitMQ during development and unit testing.
      - Implement tests for error handling (e.g., invalid queue URLs or message content issues).
